@@ -1,0 +1,27 @@
+*{margin: 0;padding: 0;border: 0;list-style: none;text-decoration: none;color: inherit;font-weight: normal;font-family: "微软雅黑";box-sizing: border-box;}
+body{min-width: 1440px;}
+img{vertical-align: middle;max-width: 100%;}
+.red{color: #d80e38;}
+.pink{color: #fe8daf;}
+.w1200{width: 1200px;height: auto;margin: 0 auto;position: relative;}
+/*轮播图*/
+.slider{width: 100%;height: 600px;overflow: hidden;}
+.slider .w1200{position: absolute;top: 0;left: 50%;transform: translateX(-50%);height: 100%;z-index: 3;}
+.slider ul li{width: 100%;height: auto;position: relative;}
+.slider ul li:after{content: "";display: block;position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 2;}
+.slider ul li .slider-txt{position: absolute;top: 20%;left: 100px;z-index: 5;color: #FFFFFF;width: 700px;}
+.slider ul li .slider-txt .title{font-size: 62px;letter-spacing: 2px;padding-bottom: 20px;}
+.slider ul li .slider-txt .sub-title{font-size: 22px;color: #FFFFFF;padding-bottom: 70px;}
+.slider ul li .slider-txt a.btn{display: inline-block;padding: 10px 30px;background: #f36c94;font-size: 20px;border-radius: 60px;transition: all .3s;cursor: pointer;}
+.slider ul li .slider-txt a.btn:hover{transition: all .3s;padding: 12px 35px;}
+.slider .arrow{position: absolute;width: 1200px;height: 58px;left: 50%;top: 50%;transform: translate(-50%,-50%);z-index: 3;}
+.slider .swiper-button-next{background-image: url(../images/arrow-right.png);width: 30px;height: 58px;background-size:30px 58px;right: -30px;}
+.slider .swiper-button-prev{background-image: url(../images/arrow-left.png);width: 30px;height: 58px;background-size:30px 58px;left: -30px;}
+/*特色服务*/
+.services{width: 100%;height: 315px;}
+.services .w1200 ul{display: flex;justify-content: space-between;width: 100%;position: absolute;z-index: 5;top: -50px;}
+.services .w1200 ul li{width: 370px;height: 265px;background: #FFFFFF;border-radius: 15px;text-align: center;padding: 30px 50px;box-shadow: 0px 0px 20px rgba(200,200,200,.5);transition: all .3s;}
+.services .w1200 ul li:hover{transition: all .3s;transform: translateY(-10px);}
+.services .w1200 ul li img{display: inline-block;height: 61px;}
+.services .w1200 ul li p.title{font-size: 20px;color: #533f45;padding: 20px 0 10px 0;}
+.services .w1200 ul li p.desc{font-size: 15px;color: #9b9b9b;line-height: 30px;}
