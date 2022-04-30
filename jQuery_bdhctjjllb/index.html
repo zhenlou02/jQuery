@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>jQuery本地缓存添加记录列表特效</title>
+	<meta name="description" content="Neat">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" user-scalable="no">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/style.js"></script>
+</head>
+<body>
+	<div class="main-group">
+		<div class="form-group">
+			<form class="form">
+				<input class="text-input">
+				<button type="submit" class="btn submit-btn">添加</button>
+			</form>
+		</div>
+		<ul class="items-group">
+			
+		</ul>
+		<div class="btn-group">
+			<button class="del-btn">清除数据</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	new Action({
+		default_item: ['明天你好', '明天你好2', '明天你好3', '明天你好4'],//无数据的时候显示
+		text_input: $('.text-input'),
+		form: $('.form'),
+		submit_btn: $('.submit-btn'),
+		del_btn: $('.del-btn'),
+		items_group:$('.items-group')
+	});
+</script>
+</html>
+
