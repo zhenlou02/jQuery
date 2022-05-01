@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>评论图片</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/commentImg.js"></script>
+</head>
+
+<body>
+<div class="pltop">全部评论</div>
+
+<div class="pinln">
+
+	<div class="xinx">
+		<div class="text">包包很赞，物美价廉，而且发货速度很快，手感很好，粉色我的最爱，</div>
+		<div class="tm-m-photos">
+			<ul class="tm-m-photos-thumb">
+				<li data-src="img/01.jpg"> <img src="img/01.jpg"> <b class="tm-photos-arrow"></b> </li>
+				<li data-src="img/02.jpg"> <img src="img/02.jpg"> <b class="tm-photos-arrow"></b> </li>
+				<li data-src="img/03.jpg"> <img src="img/03.jpg"> <b class="tm-photos-arrow"></b> </li>
+				<li data-src="img/04.jpg"> <img src="img/04.jpg"> <b class="tm-photos-arrow"></b> </li>
+			</ul>
+			<div class="tm-m-photo-viewer">
+				<img src="img/01.jpg">
+				<a class="tm-m-photo-viewer-navleft"><i></i></a>
+				<a class="tm-m-photo-viewer-navright"><i></i></a>
+			</div>
+		</div>
+		<div class="time">2020-1-12</div>
+	</div>
+
+	<div class="fenlei">颜色分类：<span>深蓝色</span></div>
+	<div class="name">记***空<span>（匿名）</span><tt>超级会员</tt></div>
+</div>
+
+
+<div class="pinln">
+	<div class="xinx">
+		<div class="text">19年到21年没用过钱夹子，前两天突发奇想的想买一个装点现金，价格便宜，手感不错，颜色也还挺好，卡位挺多，反正是都挺不错的，唯一的困扰可能就是，钱少了撑不起来吧哈哈😃，</div>
+		<div class="tm-m-photos">
+			<ul class="tm-m-photos-thumb">
+				<li data-src="img/1.jpg"> <img src="img/1.jpg"> <b class="tm-photos-arrow"></b> </li>
+				<li data-src="img/2.jpg"> <img src="img/2.jpg"> <b class="tm-photos-arrow"></b> </li>
+				<li data-src="img/3.jpg"> <img src="img/3.jpg"> <b class="tm-photos-arrow"></b> </li>
+			</ul>
+			<div class="tm-m-photo-viewer">
+				<img src="img/1.jpg">
+				<a class="tm-m-photo-viewer-navleft"><i></i></a>
+				<a class="tm-m-photo-viewer-navright"><i></i></a>
+			</div>
+		</div>
+		<div class="time">2020-1-12</div>
+	</div>
+
+	<div class="fenlei">颜色分类：<span>粉色</span></div>
+	<div class="name">记***空<span>（匿名）</span></div>
+</div>
+
+<div class="pinl">
+
+</div>
+
+
+<script>
+    
+    $(function () {
+
+        $(".tm-m-photos").commentImg({
+			activeClass: 'tm-current', //缩略图当前状态class,默认'current'
+        	nextButton: '.tm-m-photo-viewer-navright', //向后翻页按钮，默认'.next'
+        	prevButton: '.tm-m-photo-viewer-navleft', //向前翻页按钮，默认'.prev'
+			imgNavBox:'.tm-m-photos-thumb', //缩略图容器，默认'.photos-thumb'
+			imgViewBox:'.tm-m-photo-viewer' //浏览图容器，默认'.photo-viewer'
+        });
+    })
+
+</script>
+
+</body></html>
