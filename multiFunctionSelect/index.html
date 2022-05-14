@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./font/iconfont.css"
+    />
+    <link rel="stylesheet" href="./css/multiFunctionSelect.css" />
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="leftContent">
+        <h3>目前提供的下拉选项功能:</h3>
+          <div class="demoView clearfix">
+            <div class="demoTitle">普通下拉框(arrow)：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo0" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">普通下拉框(triangle)：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo1" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持输入筛选且不区分大小写的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo2" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持输入筛选且区分大小写的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo3" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持输入筛选且输入值左匹配的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo4" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持输入筛选且输入值右匹配的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo5" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持输入筛选且含有输入值匹配的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo6" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持回车选中部分匹配的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo7" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持回车选中全匹配的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo8" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持输入后才展示选项列表：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo9" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持前端自动添加全部选项：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo10" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持默认选中某选项：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo11" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+          <div class="demoView clearfix">
+            <div class="demoTitle">支持懒加载的下拉框：</div>
+            <div class="selectSearchArea multiFunctionSelectArea">
+              <input class="multiFunctionSelect" id="demo12" placeholder="请选择" type="text"  autocompvare="off"/>
+            </div>
+          </div>
+      </div>
+      <div class="rightContent">
+        <h3>目前提供的回调及方法:</h3>
+        <div class="demoView clearfix">
+          <div class="demoTitle">回车、选中触发回调：</div>
+          <div class="selectSearchArea multiFunctionSelectArea">
+            <input class="multiFunctionSelect" id="demo13" placeholder="请选择" type="text"  autocompvare="off"/>
+          </div>
+        </div>
+        <div class="demoView clearfix">
+          <div class="demoTitle">测试方法：</div>
+          <div class="selectSearchArea multiFunctionSelectArea">
+            <input class="multiFunctionSelect" id="demo14" placeholder="请选择" type="text"  autocompvare="off"/>
+          </div>
+          <button class="clickButton" id="setKey">设置选中值</button>
+          <button class="clickButton" id="getKey">获取选中key</button>
+          <button class="clickButton" id="getValue">获取选中value</button>
+          <button class="clickButton" id="refresh">刷新数据</button>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  <script type="text/javascript" src="./js/multiFunctionSelect.min.js"></script>
+  <script type="text/javascript">
+    var data1 = [
+      { key: "01", value: "北京" },
+      { key: "02", value: "上海" },
+      { key: "03", value: "广州" },
+      { key: "04", value: "深圳" },
+      { key: "05", value: "山东" },
+      { key: "06", value: "河北" },
+      { key: "07", value: "河南" },
+      { key: "08", value: "山西" },
+      { key: "09", value: "陕西" },
+      { key: "10", value: "青海" },
+      { key: "11", value: "西藏" },
+    ];
+    var data2 = [
+      { key: "01", value: "测试A" },
+      { key: "02", value: "测试B" },
+      { key: "03", value: "测试ab" },
+      { key: "04", value: "测试Abc" },
+      { key: "05", value: "测试C" },
+    ];
+    // 普通下拉框(arrow)
+    var demo0 = $("#demo0").MultiFunctionSelect({
+      selectList: data1,
+      keyField: "key",
+      valueField: "value",
+      searchSupportOption: {
+        support: false
+      }
+    })
+
+    // 普通下拉框(triangle)
+    var demo1 = $("#demo1").MultiFunctionSelect({
+      suffixIcon: "triangle",
+      selectList: data1,
+      keyField: "key",
+      valueField: "value",
+      searchSupportOption: {
+        support: false
+      }
+    })
+
+    // 支持输入筛选不区分大小写的下拉框
+    var demo2 = $("#demo2").MultiFunctionSelect({
+      selectList: data2,
+      searchSupportOption: {
+        sensitive: false
+      }
+    })
+
+    // 支持输入筛选区分大小写的下拉框
+    var demo3 = $("#demo3").MultiFunctionSelect({
+      selectList: data2,
+      searchSupportOption: {
+        sensitive: true
+      }
+    })
+
+    // 支持输入筛选且输入值左匹配的下拉框
+    var demo4 = $("#demo4").MultiFunctionSelect({
+      selectList: data2,
+      searchSupportOption: {
+        matchedCondition: "start"
+      }
+    })
+
+    // 支持输入筛选且输入值右匹配的下拉框
+    var demo5 = $("#demo5").MultiFunctionSelect({
+      selectList: data2,
+      searchSupportOption: {
+        matchedCondition: "end"
+      }
+    })
+
+    // 支持输入筛选且含有输入值匹配的下拉框
+    var demo6 = $("#demo6").MultiFunctionSelect({
+      selectList: data2,
+      searchSupportOption: {
+        matchedCondition: "all"
+      }
+    })
+
+    // 支持回车选中部分匹配的下拉框
+    var demo7 = $("#demo7").MultiFunctionSelect({
+      selectList: data2,
+      enterSelectSupportOption: {
+        methods: "part"
+      }
+    })
+
+    // 支持回车选中全匹配的下拉框
+    var demo8 = $("#demo8").MultiFunctionSelect({
+      selectList: data2,
+      enterSelectSupportOption: {
+        methods: "compvare"
+      }
+    })
+
+    // 支持输入后才展示选项列表
+    var demo9 = $("#demo9").MultiFunctionSelect({
+      selectList: data2,
+      searchSupportOption: {
+        isViewItemsWhenNoInput: false,
+      },
+    })
+
+    // 支持前端自动添加全部选项
+    var demo10 = $("#demo10").MultiFunctionSelect({
+      selectList: data1,
+      isNeedAll: true,
+      allOptions: {
+        allKeyData: "all",
+        allValueData: "全部",
+      }
+    })
+
+    // 支持默认选中某选项
+    var demo11 = $("#demo11").MultiFunctionSelect({
+      selectList: data2,
+      defaultSelect: "all",
+      isNeedAll: true,
+      allOptions: {
+        allKeyData: "all",
+        allValueData: "全部",
+      },
+    })
+    
+    // 支持懒加载的下拉框
+    var demo12 = $("#demo12").MultiFunctionSelect({
+      lazyLoadSupportOption: {
+          support: true,
+          total: 30,
+          lazyloadCallback: addLazyloadDataFunc,
+          reloadCallback:reloadCallback
+      } 
+    })
+
+    function addLazyloadDataFunc(str) {
+      return new Promise(function(resolve) {
+          setTimeout(function() {
+            resolve({ data: data1, total: 30 }) 
+          }, 500)
+        })
+    }
+    function reloadCallback() {
+      return new Promise(function(resolve) {
+          setTimeout(function() {
+            resolve({ data: data1, total: 30 }) 
+          }, 500)
+        })
+    }
+
+    // 回调测试数据
+    var demo13 = $("#demo13").MultiFunctionSelect({
+      selectList: data1,
+      enterSelectSupportOption: {
+        methods: "part"
+      }
+    })
+    demo13.change(function(val, vm) {
+      alert("返回两个参数，一是当前选择项，而是当前MultiFynctionSelect对象。这里可以进行数据处理、刷新页面等操作")
+    })
+
+    // 测试方法
+    var demo14 = $("#demo14").MultiFunctionSelect({
+      selectList: data1,
+      enterSelectSupportOption: {
+        methods: "part"
+      }
+    })
+
+    $("#getKey").click(function(){
+      alert("当前选中项key值为:" + demo14.getKey())
+    })
+
+    $("#getValue").click(function(){
+      alert("当前选中项value值为:" + demo14.getValue())
+    })
+
+    $("#setKey").click(function(){
+      demo14.setKey("04")
+    })
+
+    $("#refresh").click(function(){
+      demo14.refresh(data2)
+    })
+
+
+  </script>
+</html>
