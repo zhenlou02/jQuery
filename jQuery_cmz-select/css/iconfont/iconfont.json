@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16287378",
+      "name": "下箭头",
+      "font_class": "shanglajiantou",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "19680354",
+      "name": "叉",
+      "font_class": "close-circle",
+      "unicode": "eb3a",
+      "unicode_decimal": 60218
+    }
+  ]
+}
