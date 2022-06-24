@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>原生H5四叶草天气温湿度小卡片</title>
+
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div class="box">
+  <ul>
+    <li>
+      <div class="box_ti box_time"> <i>广东 深圳</i>
+        <p>28</p>
+        <p>℃</p>
+        <p>H：38℃</p>
+        <p>L：25℃</p>
+        <p>今天小雨记得带伞哦</p>
+        <p>湿度：65%</p>
+        <p>小雨转晴</p>
+        <p>2021-03-23</p>
+      </div>
+      <div class="box_ti box_time2"> <i>广东 深圳</i>
+        <h4>59<em>%</em></h4>
+        <strong class="strong1">空气湿度偏高，</strong> <strong>可用制水机适当抽湿。</strong> </div>
+      <div class="box_ti box_time3"> <i>广东 深圳</i>
+        <h4>良</h4>
+      </div>
+    </li>
+    <li> </li>
+    <li class="active_0"> <span class="active_span_0"></span>
+      <h3>空气湿度</h3>
+    </li>
+    <li class="active_first_0"> <span class="active_first_span"></span>
+      <h3>PM2.5</h3>
+    </li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$(".box").click(function(){
+		if($(this).hasClass("box_rotate")){
+			$(this).removeClass("box_rotate").find("ul").addClass("box_rotate2")
+		}else{
+			$(this).addClass("box_rotate").find("ul").removeClass("box_rotate2");
+		}
+	})
+	
+	$(".box ul li.active_0,.bj_gre_last").live("click",function(){
+		$(this).siblings().find(".box_ti").eq(1).slideDown().siblings().slideUp()
+		.parent("li").siblings().eq(1).addClass("active_1").find("span").addClass("active_1").siblings("h3").html("PM2.5")
+		.parent("li").siblings().eq(2).addClass("last_1").find("span").addClass("last_span1").siblings("h3").html("温度&天气")
+		.parent("li").siblings().eq(2).removeClass("active_0 bj_gre").siblings().removeClass("active_first_0 bj_gre_last")
+	})
+	$(".box ul li.active_1,.active_first_0").live("click",function(){
+		//alert(1)
+		$(this).siblings().find(".box_ti").eq(2).slideDown().siblings().slideUp()
+		.parent("li").siblings().eq(1).addClass("bj_gre").find("span").addClass("bj_gre_span").siblings("h3").html("温度&天气")
+		.parent("li").siblings().eq(2).addClass("bj_gre_last").find("span").addClass("bj_gre_last_s").siblings("h3").html("空气湿度")
+		.parent("li").siblings().eq(2).removeClass("active_1 active_0").siblings().removeClass("last_1 active_first_0")
+	})
+	$(".box ul li.bj_gre,.last_1").live("click",function(){
+		$(this).siblings().find(".box_ti").eq(0).slideDown().siblings().slideUp()
+		.parent("li").siblings().addClass("active_0").find("span").addClass("active_span_0").siblings("h3").html("空气湿度")
+		.parent("li").siblings().eq(3).addClass("active_first_0").find("span").addClass("active_first_span").siblings("h3").html("PM2.5")
+		.parent("li").siblings().eq(2).removeClass("bj_gre active_1").siblings().removeClass("bj_gre_last active_0 last_1");
+	})
+})
+</script>
+</body>
+</html>
