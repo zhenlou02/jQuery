@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>h5 picker带检索功能</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="MobileOptimized" content="280" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0" />
+
+    <!-- 缓存与过期时间设置 -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="./rem.js"></script>
+
+    <style>
+        .seach_name {
+            display: block;
+            font-size: 0.24rem;
+            color: #666;
+            border: 1px solid #e0e0e0;
+            padding: 0.2rem 0.2rem;
+            width: 88%;
+            margin: 0.2rem auto;
+            border-radius: 4px;
+        }
+    
+        #mymodal {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 1rem;
+            background-color: rgba(0, 0, 0, .6);
+            display: none;
+            z-index: 9999;
+        }
+    
+        .modal-main {
+            position: fixed;
+            bottom: -900px;
+            left: 0;
+            height: 75%;
+            width: 100%;
+            background-color: #fff;
+            font-size: .22rem;
+            /*	margin-bottom: 0.3rem;*/
+        }
+    
+        .address-title {
+            font-size: 0.26rem;
+            text-align: center;
+            padding: 0.2rem 0;
+            color: #222;
+            border-bottom: 1px solid #EFEFEF;
+            display: flex;
+        }
+    
+        .address-title .cancel {
+            color: #666;
+        }
+    
+        .address-title .ensure {
+            color: #1e83d3;
+        }
+    
+        .address-title .title {
+            font-weight: 700;
+            flex: 2;
+        }
+    
+        .close {
+            position: absolute;
+            padding: 0.05rem 0.25rem;
+            right: 0rem;
+            top: 0rem;
+            color: #9a9da7;
+            font-size: 0.5rem;
+        }
+    
+        .optionwrapper {
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            padding-left: .2rem;
+            height: .6rem;
+            box-sizing: border-box;
+        }
+    
+        .active-option {
+            border-bottom: 1px solid #FF2440;
+        }
+    
+        .option-content {
+            position: absolute;
+            top: 0.8rem;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    
+        .option-group {
+            display: none;
+            overflow: auto;
+            height: 100%;
+            border-top: 1px solid #EFEFEF;
+            padding: 0 .3rem;
+        }
+    
+        .option-list {
+            padding: .2rem .2rem;
+            display: flex;
+            border-bottom: 1px solid #efefef;
+        }
+    
+        .checked {
+            width: .15rem;
+            height: .15rem;
+            background-color: #FF304A;
+            display: inline-block;
+            margin-left: .2rem;
+            border-radius: 50%;
+            display: none;
+            margin-top: .1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" style="display: flex;justify-content:center;">
+        <input type="text" id="project" placeholder="请选择科目名称" onfocus="this.blur()" style="width: 80%;
+        height: 50px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        line-height: 50px;
+        margin: 50px auto;
+        text-align: center;
+        font-size: 20px;
+    }">
+    </form>
+
+    <!-- 模板 -->
+    <script type="text/html" id="script_cus_select">
+        <section id="mymodal">
+            <div class="modal-main">
+                <div class="fixWidth address-title" style="display: flex;text-align: center;">
+                    <div class="cancel" style="flex:1;">取消</div>
+                    <div class="title" style="flex:2;">${title}</div>
+                    <div class="ensure" style="flex:1;">确认</div>
+                </div>
+    
+                <div class="option-content">
+                    <input class="seach_name" placeholder="请输入搜索名称"/>
+                    <ul class="option-group option-group-one" data-index="0" style="display: block"></ul>
+                </div>
+            </div>
+        </section>
+    </script>
+
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script>
+        cusSelect('project', {
+            title: '选择科目',
+            data: [
+                { text: '科目-1', id: 1 },
+                { text: '科目-2', id: 2 },
+                { text: '科目-3', id: 3 },
+                { text: '科目-4', id: 4 },
+                { text: '科目-5', id: 5 },
+                { text: '科目-6', id: 6 },
+                { text: '科目-7', id: 7 },
+                { text: '科目-8', id: 8 },
+                { text: '科目-9', id: 9 },
+                { text: '科目-10', id: 10 }
+            ],
+            callback: function (data) {
+                $("#project").val(data.text);
+                $("#project").parent().find('[name=project_id]').remove();
+                $("#project").parent().append(`<input type="hidden" name="project_id" value="${data.id}" />`);
+            }
+        }).init();
+
+        /**
+        * 自定义下来狂
+        * @param option
+        */
+        function cusSelect(eleId, config = {}) {
+            let option = Object.assign({}, {
+                title: '学校',
+                selectTag: '',
+                multi: false,//多选
+                searchAjax: false,//搜索是否异步，请写异步获取数据方法
+                selectFun: function () { },
+                callback: function () { }
+            }, config || {}), tplData = { title: option.title }, tpl = $("#script_cus_select").html();
+
+            /**
+             * 初始化
+             */
+            const init = function () {
+                //初始化模板
+                let tplc = tpl.replace(/\$\{(.*?)\}/i, function (match, $1) {
+                    return tplData[$1];
+                });
+                option.selectTag = `cusSelect_${eleId}`;
+                $('#' + option.selectTag).remove();
+                $('body').append(`<div id="${option.selectTag}">${tplc}</div>`);
+
+                initData(option.data || []);
+                bindEvent();
+            };
+
+            /**
+             * 初始化数据
+             */
+            const initData = function (data = []) {
+                if (data) {
+                    let str = '';
+                    $.each(data, function (index, item) {
+                        str += `<li class="option-list option-list-one" data="${item.text}|${item.id}|${index}" data-index="${index}" data-text="${item.text}" data-id="${item.id}">
+								<span>${item.text}</span>
+								<div class="checked"></div>
+							</li>`;
+                    });
+                    $('#' + option.selectTag).find(".option-group-one").html(str);
+                }
+            };
+
+            /**
+             * 绑定事件
+             */
+            const bindEvent = function () {
+                //显示
+                $('#' + eleId).parent().on("click", function () {
+                    $("#" + option.selectTag + " #mymodal").show();
+                    $("#" + option.selectTag + " #mymodal").find(".modal-main").animate({ "bottom": "0" }, 400);
+
+                    if (option.multi !== undefined && option.multi) {
+                        if (option.multiSelectData) {
+                            $("#" + option.selectTag).find(".option-list-one .checked").removeClass('active').hide();
+                            option.multiSelectData.forEach(function (item, index) {
+                                $("#" + option.selectTag).find(".option-list-one[data-id=" + item.id + "]").trigger('click');
+                            });
+                        }
+                    }
+                });
+
+                //绑定搜索
+                $("#" + option.selectTag).on('keyup', '.seach_name', function (e) {
+                    let searchAjax = option.searchAjax || false, value = $(e.target).val().trim();
+                    if (searchAjax) {
+                        if (typeof searchAjax === 'function') {
+                            let res = searchAjax.call(this, value);
+                            if (res === false) return;
+                            //重新加载数据
+                            res && 'data' in res && initData(res.data);
+                        }
+                    } else {
+                        if (value.length < 1) {
+                            $(this).next('ul').find('li').show();
+                        } else {
+                            $(this).next('ul').find('li').hide();
+                            $(this).next('ul').find("li[data*='" + value + "']").show();
+                        }
+                    }
+                });
+
+                //选择项点击
+                $("#" + option.selectTag).on("click", ".option-list-one", function () {
+                    let index = $(this).index();
+
+                    //多选模式
+                    let data = [];
+                    if (option.multi !== undefined && option.multi) {
+                        let cIndex = 0;
+                        data = option.data[index];
+                        option.multiSelectDataT = option.multiSelectDataT || [];//临时属性，确定后会删除
+                        if (!option.multiSelectDataT.some((item, cindex) => {
+                            cIndex = cindex;
+                            return item.id == data.id;
+                        })) {
+                            option.multiSelectDataT.push(data);
+                            $(this).find('.checked').addClass('active').show();
+                        } else {
+                            //多选至少保留一个
+                            if (option.multiSelectDataT.length > 1) {
+                                option.multiSelectDataT.splice(cIndex, 1);
+                                $(this).find('.checked').removeClass('active').hide();
+                            }
+                        }
+                        data = option.multiSelectDataT;
+                    } else {
+                        $(this).parent().find('.checked').removeClass('active').hide();
+                        $(this).find('.checked').addClass('active').show();
+                        data = option.data[index];
+                    }
+
+                    if (option.selectFun && typeof option.selectFun === 'function') {
+                        if (option.selectFun.call(this, data) === false) return;
+                    }
+                });
+
+                //点击关闭
+                $("#" + option.selectTag).on("click", ".cancel", function () {
+                    close();
+                });
+
+                //点击确定
+                $("#" + option.selectTag).on("click", ".ensure", function () {
+                    let checkIndex = $("#" + option.selectTag).find('.option-list-one .active').parent().index();
+                    let data = checkIndex >= 0 ? option.data[checkIndex] : [];
+                    if (option.multi !== undefined && option.multi) data = option.multiSelectData = option.multiSelectDataT || [];
+
+                    if (option.callback && typeof option.callback === 'function') {
+                        if (option.callback.call(this, data) === false) return;
+                    }
+                    close();
+                });
+            };
+
+            const close = function () {
+                delete (option.multiSelectDataT);//删除临时属性
+                $("#" + option.selectTag).find(".modal-main").animate({ "bottom": "-900px" }, 400);
+                setTimeout(() => {
+                    $("#" + option.selectTag + " #mymodal").fadeOut();
+                }, 350)
+            };
+
+            return { init, close };
+        }
+    </script>
+</body>
+
+</html>
