@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导出excel</title>
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+        #score tr:first-child td{
+            font-weight: 600;
+        }
+        p{
+            margin: 0;
+            margin-top: 10px;
+        }
+        #export{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="score" cellspacing="0" cellpadding="0" border="1" solid="#000000" >
+        <tr>
+            <td class="td0">姓名</td>
+            <td class="td1">班级</td>
+            <td class="td2">数学成绩</td>
+            <td class="td3">历史成绩</td>
+        </tr>
+        <tr>
+            <td class="td0">张三</td>
+            <td class="td1">1</td>
+            <td class="td2">65</td>
+            <td class="td3">83</td>
+        </tr>
+        <tr>
+            <td class="td0">李四</td>
+            <td class="td1">1</td>
+            <td class="td2">34</td>
+            <td class="td3">89.5</td>
+        </tr>
+        <tr>
+            <td class="td0">王五</td>
+            <td class="td1">2</td>
+            <td class="td2">90</td>
+            <td class="td3">95</td>
+        </tr>
+        <tr>
+            <td class="td0">赵六</td>
+            <td class="td1">2</td>
+            <td class="td2">76.3</td>
+            <td class="td3">80.1</td>
+        </tr>
+    </table>
+    <p>请选择想要导出excel的字段</p>
+    <div class="checkbox"></div>
+    <button id="export" class="layui-btn icon-btn">导出excel</button>
+    <div id="export1"></div>
+</body>
+<script>
+    // 需要导出的字段（默认全选）
+    $('#score tr').eq(0).find('td').each(function (index, element) {
+        $('.checkbox').append('<div><input type="checkbox" name="check_excel" id="" checked>'+ $(this).text() +'</div>')
+    });
+    // 选择需要导出的字段
+    var table=document.getElementById("score").innerHTML
+    var table_copy = $(table).clone()
+    $('[name=check_excel]').click(function(){
+        table_copy = $(table).clone()//实时用最新的表格以便后面的移除
+        $('.checkbox input').each(function (index, element) {
+            // 如果该字段没有选择，则移除
+            if(!this.checked){
+                $(table_copy).find('.td'+index+'').remove()
+            }
+        });
+    })
+    // 导出excel函数
+    $('#export').click(function () {
+        // 判断是否有选择字段
+        if(!$(table_copy).find('td').length){
+            alert("请选择字段")
+            return false
+        }
+        var excel = "";
+        excel += table_copy[0].innerHTML;
+        // Worksheet名
+        const worksheet = 'Sheet1'
+ 
+        // 下载的表格模板数据
+        const template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" <head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>'+worksheet+'</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>'+excel+'</table></body></html>';
+        // 下载模板
+        // window.location.href = uri + base64(template);
+        const uri = 'data:application/vnd.ms-excel;base64,' + base64(template);
+        var link = document.createElement('a');
+        link.href = uri
+        link.download = worksheet//尤为重要。不然有些浏览器报Not allowed to navigate top frame to data URL这个错误
+        document.getElementById('export1').appendChild(link)
+        link.click()
+        document.getElementById('export1').removeChild(link)
+        return true
+    });
+    // 输出base64编码
+    const base64 = function(s) {return window.btoa(unescape(encodeURIComponent(s)))} ;
+    console.log(" ......................阿弥陀佛......................\n"+
+                           "                       _oo0oo_                      \n"+
+                           "                      o8888888o                     \n"+
+                           "                      88\" . \"88                     \n"+
+                           "                      (| -_- |)                     \n"+
+                           "                      0\\  =  /0                     \n"+
+                           "                   ___/‘---’\\___                   \n"+
+                           "                  .' \\|       |/ '.                 \n"+
+                           "                 / \\\\|||  :  |||// \\                \n"+
+                           "                / _||||| -卍-|||||_ \\               \n"+
+                           "               |   | \\\\\\  -  /// |   |              \n"+
+                           "               | \\_|  ''\\---/''  |_/ |              \n"+
+                           "               \\  .-\\__  '-'  ___/-. /              \n"+
+                           "             ___'. .'  /--.--\\  '. .'___            \n"+
+                           "         .\"\" ‘<  ‘.___\\_<|>_/___.’>’ \"\".          \n"+
+                           "       | | :  ‘- \\‘.;‘\\ _ /’;.’/ - ’ : | |        \n"+
+                           "         \\  \\ ‘_.   \\_ __\\ /__ _/   .-’ /  /        \n"+
+                           "    =====‘-.____‘.___ \\_____/___.-’___.-’=====     \n"+
+                           "                       ‘=---=’                      \n"+
+                           "                                                    \n"+
+                           "....................佛祖保佑 ,永无BUG...................");
+</script>
+</html>
