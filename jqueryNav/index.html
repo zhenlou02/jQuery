@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端滚动式导航</title>
+    <script>
+        var bw = (document.documentElement.clientWidth / 7.5) + "px";
+        var htmlTag = document.getElementsByTagName("html")[0];
+        htmlTag.style.fontSize = bw;
+    </script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <div id="top">
+        <div class="swiper-container nav" id="nav">
+            <div class="swiper-wrapper nav-list">
+            </div>
+        </div>
+    </div>
+	<p style="text-align: center;line-height: 100px">请在移动端查看效果，支持拖动滑动</p>
+</body>
+<script src="js/index.js"></script>
+</html>
