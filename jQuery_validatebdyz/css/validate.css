@@ -1,0 +1,6 @@
+*[drea-verify]{}
+*[drea-form]{}
+*[drea-tip]{}
+*[drea-parent]{}
+.drea-verify-error{background: #f3d8d8 url(../img/verify-bak.png) 50% 50% repeat;}
+.drea-verify-error-div{padding: 5px;position:fixed; border:1px solid #e6dd52; background-color:#fefccc;*display:inline;zoom:1;z-index:99999999;display: none}
