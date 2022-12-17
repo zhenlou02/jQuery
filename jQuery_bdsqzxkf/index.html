@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery仿百度商桥在线客服代码</title>
+
+<link rel="stylesheet" href="css/shangqiao.css">
+
+</head>
+
+<body style="min-height: 1600px; background: #333;">
+
+<div class="guanggao-dbbox">
+    <div class="nb-nodeboard-top">
+        <span class="fl">请您留言</span>
+        <span class="fr" id="nb-close"><img src="images/nodeMin.png" alt=""></span>
+        <span class="fr" id="nb-gb"><img src="images/nodeMin.png" alt=""></span>
+        <span class="fr" id="nb-show"><img src="images/nodeMax.png" alt=""></span>
+    </div>
+    <div class="nb-nodeboard-text">
+        <p class="nb-nodeboard-company">八六建筑贵宾加急通道</p>
+        <p class="nb-nodeboard-link">代办申请</p>
+    </div>
+    <form id="nb_nodeboard_form" autocomplete="off" class="nb-board-form" action="" method="post" >
+        <div class="nb-nodeboard-content">
+            <textarea id="nb-nodeboard-set-content-js" name="square"  placeholder="请在此输入留言内容，我们会尽快与您联系。(必填)"></textarea>
+            <p class="nb-nodeboard-tips" id="nb-nodeboard-tips-js"></p>
+        </div>
+
+        <div class="nb-nodeboard-inputbox" id="nb-nodeboard-name" >
+            <span class="nb-nodeboard-icon nodeName"></span>
+            <input id="nb_nodeboard_set_name" data-write="0" name="name" maxlength="10"  type="text"  placeholder="姓名">
+        </div>
+
+        <div class="nb-nodeboard-inputbox" id="nb_nodeboard_phone" >
+            <span class="nb-nodeboard-icon nodePhone"></span>
+            <input id="nb_nodeboard_set_phone" name="tel" maxlength="11" class="nb-nodeboard-param"  type="text"  placeholder="手机号(必填)">
+        </div>
+        <p class="nb-nodeboardphone-tips" id="nb-nodeboardphone-tips-js"></p>
+        <div id="nb_nodeboard_send" needverifycode="1" class="nb-nodeboard-send-btn">发 送</div>
+    </form>
+</div>
+
+<!--/浮动窗口-->
+<div class="nb-dingwei">
+    <div class="container">
+        <div class="nb-fd-close" onClick="closenb()"><img src="images/close.png" alt=""></div>
+        <div class="nb-fd-content">
+            <p>您的专属VIP通道<br>办理咨询</p>
+            <div class="anniubox">
+                <span class="nb-sh" onClick="closenb()">稍后再说</span>
+                <span class="nb-dk" onClick="opennb()">现在咨询</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nb-online-box" onClick="opennb()"><h2>在线咨询</h2><p>Online Consulting</p></div>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/shangqiao.js" type="text/javascript"></script>
+
+</body>
+</html>
