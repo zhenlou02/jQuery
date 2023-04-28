@@ -1,0 +1,56 @@
+.masky {
+    width: 100%;
+    height: 100%;
+    -webkit-mask: url(mask_c1.png) center bottom no-repeat;
+    -webkit-mask-size: 4000% 100%;
+    will-change: transform;
+    -webkit-animation: masky 1s steps(39) forwards;
+    -moz-animation: masky 1s steps(39) forwards;
+    -ms-animation: masky 1s steps(39) forwards;
+    animation: masky 1s steps(39) forwards;
+}
+
+@-webkit-keyframes masky {
+	0% {
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@-moz-keyframes masky {
+	0% {
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@-ms-keyframes masky {
+	0% {
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@-o-keyframes masky {
+	0% {
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@keyframes masky {
+	0% {
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		-webkit-mask-position: 100% 0
+	}
+}

@@ -1,0 +1,180 @@
+/* 清除浮动 */
+.clearfix:after {content:"\200B"; display:block; height:0; clear:both; }
+.clearfix { *zoom:1; }
+*{
+	padding: 0;
+    margin: 0;
+}
+a {
+    outline: none;
+    outline: none;
+    text-decoration: none;
+}
+ul, ol, li {
+    list-style: none;
+}
+body{
+	background: #EEEEEE;
+	margin: 0 auto;
+}
+.container {
+	width: 100%;
+	max-width: 1920px;
+	min-height: 937px;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.sy{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -9999px;
+    background: url(./img/index.png) no-repeat center center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.qg{
+	display: none;
+	width: 100%;
+	height: 100%;
+	text-indent: -9999px;
+    background: url(./img/qg.png) no-repeat center center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.qg.on{
+	display: block;
+}
+.dg{
+	display: none;
+	width: 100%;
+	height: 100%;
+	text-indent: -9999999px;
+    background: url(./img/dg.png) no-repeat center center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.dg.on{
+	display: block;
+}
+.play_btn{
+	display: block;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+}
+.play1{
+	left: 0;
+    top: 50%;
+    width: 400px;
+    height: 124px;
+    margin-top: -73px;
+}
+.play2{
+	right: 0;
+	top: 50%;
+	width: 400px;
+    height: 124px;
+    margin-top: -73px;
+}
+.mu_next{
+	right: 0;
+    top: 50%;
+    width: 107px;
+    margin-top: -117px;
+    height: 235px;
+}
+.mu_prev{
+	right: 0;
+    top: 50%;
+    width: 107px;
+    margin-top: -117px;
+    height: 235px;
+}
+
+
+/*烟雾效果*/
+.masky {
+    -webkit-mask-image: url(./img/masky.png);
+    -moz-mask-image: url(./img/masky.png);
+    -ms-mask-image: url(./img/masky.png);
+    -o-mask-image: url(./img/masky.png);
+    mask-image: url(./img/masky.png);
+    -webkit-mask-size: 2500% 100%;
+    -moz-mask-size: 2500% 100%;
+    -ms-mask-size: 2500% 100%;
+    -o-mask-size: 2500% 100%;
+    mask-size: 2500% 100%;
+    -webkit-will-change: transform;
+    -moz-will-change: transform;
+    -ms-will-change: transform;
+    -o-will-change: transform;
+    will-change: transform;
+}
+.masky.qg_on,.masky.dg_on,.masky.index_on  {
+    -moz-animation: masky .8s steps(24) forwards;
+    -webkit-animation: masky .8s steps(24) forwards;
+    -o-animation: masky .8s steps(24) forwards;
+    -ms-animation: masky .8s steps(24) forwards;
+    animation: masky .8s steps(24) forwards;
+}
+
+@-webkit-keyframes masky {
+	0% {
+		mask-position: 0 0;
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		mask-position: 100% 0;
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@-moz-keyframes masky {
+	0% {
+		mask-position: 0 0;
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		mask-position: 100% 0;
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@-ms-keyframes masky {
+	0% {
+		mask-position: 0 0;
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		mask-position: 100% 0;
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@-o-keyframes masky {
+	0% {
+		mask-position: 0 0;
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		mask-position: 100% 0;
+		-webkit-mask-position: 100% 0
+	}
+}
+
+@keyframes masky {
+	0% {
+		mask-position: 0 0;
+		-webkit-mask-position: 0 0
+	}
+	100% {
+		mask-position: 100% 0;
+		-webkit-mask-position: 100% 0
+	}
+}
