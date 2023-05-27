@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>单屏切换</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<div id="pageDiv" class="pageDiv">
+				<div class="page page0 show"></div>
+				<div class="page page1"></div>
+				<div class="page page2"></div>
+				<div class="page page3"></div>
+				<div class="page page4"></div>
+				<div class="page page5 out"></div>
+			</div>
+			<div class="bg">
+				<!--导航-->
+				<div class="nav_box">
+					<div class="nav_list" >
+						<li class="card active"> 
+							<img class="card_bg" src="./img/card_bg0.jpg"> 
+							<div class="new"></div>
+						</li>
+						<li class="card"> 
+							<img class="card_bg" src="./img/card_bg1.png"> 
+							<div class="new"></div>
+						</li>
+						<li class="card"> 
+							<img class="card_bg" src="./img/card_bg2.png"> 
+							<div class="new"></div>
+						</li>
+						<li class="card"> 
+							<img class="card_bg" src="./img/card_bg3.png"> 
+							<div class="new"></div>
+						</li>
+						<li class="card"> 
+							<img class="card_bg" src="./img/card_bg4.png"> 
+							<div class="new"></div>
+						</li>
+						<li class="card"> 
+							<img class="card_bg" src="./img/card_bg5.png"> 
+							<div class="new"></div>
+						</li>
+					</div>
+				</div>
+				<!--左右边-->
+				<div class="line_mc">
+					<div class="prev_button"></div>
+					<div class="next_button"></div>
+					<div class="line_bg">
+						<div class="line" data-render="game_index game_data" style="width: 11.1111%;"></div>
+					</div>
+					<div class="current_txt" data-render="game_index game_data">06/09</div>
+				</div>
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+		<script src="js/index.js"></script>
+	</body>
+
+</html>
