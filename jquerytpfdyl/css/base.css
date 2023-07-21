@@ -1,0 +1,214 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+menu,
+footer,
+header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font: normal 14px/24px "Microsoft YaHei"
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+
+
+fieldset,
+img {
+    border: 0
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #ee7700
+}
+input:focus,
+textarea:focus
+ {
+    border: 0;
+    outline: 0
+}
+.fl {
+    float: left;
+}
+body {
+    background-color: #262626
+}
+.fr {
+    float: right;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.m {
+    width:1200px;
+    margin:0 auto
+}
+.no-margin {
+    margin-right: 0 !important;
+}
+
+.dasai-sec2 .mySwiper  {
+    width: 1200px;
+    height: 350px;
+    overflow: hidden;
+
+
+}
+.dasai-sec2 .swiper-slide .pic {
+    width: 100%;
+    height: 350px;
+    border-radius: 4px;
+    overflow: hidden;
+    border:10px solid #fff;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dasai-sec2 .swiper-slide .pic .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    display: none;
+}
+.dasai-sec2 .swiper-slide .pic:hover {
+    border:10px solid #92CD89;
+}
+.dasai-sec2 .swiper-slide .pic:hover .cover {
+    display: block;
+}
+.dasai-sec2 .swiper-slide .pic .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    top: 0;
+
+}
+.dasai-sec2 .swiper-slide .pic .cover .icon-imgs {
+    margin-top: 110px;
+    width: 100%;
+    height: 37px;
+    background: url(../images/big.png) center no-repeat;
+    display: block;
+}
+.dasai-sec2 .swiper-slide .pic .cover p {
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-top: 26px;
+}
+.dasai-sec2 .tips {
+    font-size: 14px;
+    color: #8E8C6B;
+    line-height: 36px;
+    margin: 24px 0 15px;
+
+}
+.dasai-sec2 .cont {
+    position: relative;
+}
+.dasai-sec2 .cont .swiper-button-next, 
+.dasai-sec2 .cont .swiper-container-rtl .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    background: url(../images/right.png) center no-repeat;
+    top: -20px;
+    right: 0;
+    z-index: 1
+}
+.dasai-sec2 .cont .swiper-button-next:hover, 
+.dasai-sec2 .cont .swiper-container-rtl .swiper-button-prev:hover {
+    width: 30px;
+    height: 30px;
+    background: url(../images/right-sel.png) center no-repeat;
+    top: -20px;
+    right: 0;
+}
+.dasai-sec2 .cont .swiper-button-next:focus, 
+.dasai-sec2 .cont .swiper-container-rtl .swiper-button-prev:focus {
+    border:0;
+    outline: none;
+}
+.dasai-sec2 .cont .swiper-button-prev, 
+.dasai-sec2 .cont .swiper-container-rtl .swiper-button-next {
+    width: 30px;
+    height: 30px;
+    background: url(../images/left.png) center no-repeat;
+    top: -20px;
+    right: auto;
+    left: 1130px;
+    z-index: 1
+}
+
+.dasai-sec2 .cont .swiper-button-prev:hover, 
+.dasai-sec2 .cont .swiper-container-rtl .swiper-button-next:hover {
+    width: 30px;
+    height: 30px;
+    background: url(../images/left-sel.png) center no-repeat;
+    top: -20px;
+    right: auto;
+    left: 1130px;
+}
+.dasai-sec2 .cont .swiper-button-prev:focus, 
+.dasai-sec2 .cont .swiper-container-rtl .swiper-button-next:focus {
+    border:0;
+    outline: none;
+}
