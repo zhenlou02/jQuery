@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>17sucai - SVG animation with stroke-dash offset</title>
+  <link rel="stylesheet" href="static/css/normalize.min.css">
+<link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="text">
+
+  <h1>This is a cool effect</h1>
+  <p>a nice example of using SVG and dashoffset stroke animation for creative image layouts. 
+  </p>
+
+</div>
+
+<div class="Hero_image">
+  <svg class="Hero_svg" preserveaspectratio="xMinYMin slice" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1084.13 542.14">
+    <defs>
+      <mask id="Hero_mask">
+        <path class="Hero_mask" d="M1191-215.43,1051.9-37a169.64,169.64,0,0,1-207,268.79L667.27,93.27C494.44-40.62,245.8-9,111.91,163.78,6.6,299.71,2.08,457.7,7.26,608.59H236.87c-5.64-100.23,3.73-244.45,52.49-307.37a169.66,169.66,0,0,1,238-30.19L704.2,408.9c173.7,132.76,422.14,99.58,554.9-74.13C1390.06,163.44,1359.78-81.19,1191-215.43Z" fill="#ffffff" fill-rule="evenodd"></path>
+      </mask>
+      <pattern id="Hero_image" x="0%" y="0%" width="100%" height="100%" patternunits="userSpaceOnUse">
+        <!--         <image href="https://neonfutures.org.uk/media/rn3jbxwh/neon-hero-004.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMaxYMax slice"></image> -->
+        <image href="https://images.unsplash.com/photo-1552083974-186346191183?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" x="0" y="0" width="100%" height="100%" preserveaspectratio="xMaxYMax slice"></image>
+      </pattern>
+    </defs>
+    <g mask="url(#Hero_mask)">
+      <path stroke="#0667d2" class="Hero_path" fill="none" stroke-miterlimit="10" stroke-width="255" fill-rule="evenodd" d="M122.07,630s-3.13-181.33,2.5-207.23,32.66-125,82.22-183.58,74.33-84.46,143.7-101c65.76-6.84,131.1-13.89,212.19,22.15S773.92,307.59,784.06,315.48,874.65,389,979.39,376.59c99.6-11.79,175.69-78.84,206.1-122.77s54.06-95.73,55.18-159.92S1196.75-75,1110-146"></path>
+      <path stroke="url(#Hero_image)" class="Hero_path" fill="none" stroke-miterlimit="10" stroke-width="255" fill-rule="evenodd" d="M122.07,630s-3.13-181.33,2.5-207.23,32.66-125,82.22-183.58,74.33-84.46,143.7-101c65.76-6.84,131.1-13.89,212.19,22.15S773.92,307.59,784.06,315.48,874.65,389,979.39,376.59c99.6-11.79,175.69-78.84,206.1-122.77s54.06-95.73,55.18-159.92S1196.75-75,1110-146"></path>
+    </g>
+  </svg>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
