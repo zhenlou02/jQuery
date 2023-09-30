@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery轮播图平滑过渡，自动播放</title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/rotation_chart.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			body{background-color: #262626}
+			.focus {
+				border: 1px solid black;
+				margin: 150px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="focus">
+			<ul>
+				<li><img src="img/tu4.jpg"></li>
+				<li><img src="img/tu2.jpg"></li>
+				<li><img src="img/tu3.jpg"></li>
+				<li><img src="img/tu1.jpg"></li>
+			</ul>
+			<ol>
+			</ol>
+			<span class="lb_l">&lt;</span>
+			<span class="lb_r">&gt;</span>
+		</div>
+	</body>
+
+	<script>
+		var focusWidth = 640; // 轮播图的宽
+		var focusHeight = 427.5; // 轮播图的高
+		var focusOlLeft = 270; // 小点距左边框距离
+		var focusOlTop = 5; // 小点距下边框距离
+		var rotation_Speed = 3000; // 轮播图自动播放速度 毫秒
+		setRotation(focusWidth, focusHeight, focusOlLeft, focusOlTop, shuffingSpeed);
+	</script>
+
+</html>
